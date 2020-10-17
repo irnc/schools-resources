@@ -17,6 +17,9 @@ jobs:
                 node-version: 12.x
             - run: npm install
             - run: node fetch-form-responses.js
+              env:
+                RESPONSES_SPREADSHEET_ID: ${{ secrets.RESPONSES_SPREADSHEET_ID }}
+                READER_CREDENTIALS: ${{ secrets.READER_CREDENTIALS }}
             - run: node create-resources-from-responses.js
             - name: Push changes
               run: |
