@@ -24,5 +24,6 @@ jobs:
             - name: Push changes
               run: |
                 git config user.name ${{ github.actor }}
-                git commit -a -m "Update resources from Sheets"
+                git add data/
+                git commit -m "Update resources from Sheets" || echo OK
                 git push
