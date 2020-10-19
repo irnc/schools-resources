@@ -1,8 +1,12 @@
 const { google } = require('googleapis');
 const _ = require('lodash');
 const fs = require('fs');
+const assert = require('assert');
 
 const { RESPONSES_SPREADSHEET_ID, READER_CREDENTIALS } = process.env;
+
+assert(RESPONSES_SPREADSHEET_ID, 'RESPONSES_SPREADSHEET_ID not set');
+assert(READER_CREDENTIALS, 'READER_CREDENTIALS not set');
 
 const credentials = JSON.parse(READER_CREDENTIALS);
 const auth = new google.auth.JWT(
@@ -22,7 +26,8 @@ const sheets = google.sheets({
 const expectedColumns = [
   'Timestamp',
   'Школа',
-  'Ссылка на Telegram-группу',
+  'Ресурс',
+  'Описание',
   'Moderator resolution',
 ];
 
@@ -30,6 +35,7 @@ const props = [
   'timestamp',
   'referenceId',
   'url',
+  'description',
   'resolution',
 ];
  
@@ -39,10 +45,9 @@ const main = async () => {
   const { data } = await sheets.spreadsheets.values.get(
     {
       spreadsheetId: RESPONSES_SPREADSHEET_ID,
-      // There are only A-D columns, with 3000+ schools,
+      // There are only A-E columns, with 3000+ schools,
       // so 4000 should be enough.
-      // Unable to parse range: Index!A1:D4000
-      range: '\'Form Responses 1\'!A1:D4000',
+      range: '\'Form Responses 1\'!A1:E4000',
     },
   );
 

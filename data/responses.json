@@ -3,12 +3,14 @@
     "timestamp": "10/16/2020 1:56:36",
     "referenceId": "479924757",
     "url": "https://t.me/tutby_official",
+    "description": "Тестовый канал.",
     "resolution": "use"
   },
   {
     "timestamp": "10/20/2020 0:22:43",
     "referenceId": "479924757",
     "url": "https://liceum1grodno.schools.by/",
+    "description": "Сайт лицея.",
     "resolution": "use"
   }
 ]

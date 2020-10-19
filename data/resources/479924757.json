@@ -1,10 +1,12 @@
 [
   {
     "timestamp": "10/16/2020 1:56:36",
-    "url": "https://t.me/tutby_official"
+    "url": "https://t.me/tutby_official",
+    "description": "Тестовый канал."
   },
   {
     "timestamp": "10/20/2020 0:22:43",
-    "url": "https://liceum1grodno.schools.by/"
+    "url": "https://liceum1grodno.schools.by/",
+    "description": "Сайт лицея."
   }
 ]
