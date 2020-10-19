@@ -1,5 +1,5 @@
 {
-  "name": "school-resources",
+  "name": "schools-resources",
   "version": "1.0.0",
   "description": "School-related resources are crowd-sources using Google Forms.",
   "main": "create-resources-from-responses.js",
